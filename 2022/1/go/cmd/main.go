@@ -1,11 +1,11 @@
 package main
 
 import (
+	"day-one/internal/algo"
 	"flag"
 	"fmt"
 	"log"
 	"os"
-	"strconv"
 	"strings"
 )
 
@@ -20,7 +20,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	result := largestSumOfConsecutiveNumbers(lines)
+	result := algo.LargestSumOfConsecutiveNumbers(lines)
 	fmt.Println(result)
 }
 
@@ -50,22 +50,4 @@ func readLinesFromFile(path string) ([]string, error) {
 	}
 
 	return strings.Split(string(data), "\n"), nil
-}
-
-func largestSumOfConsecutiveNumbers(lines []string) int {
-	maxSum := 0
-	currentSum := 0
-	for _, line := range lines {
-		if line == "" {
-			currentSum = 0
-		} else {
-			number, _ := strconv.Atoi(line)
-			currentSum += number
-			if currentSum > maxSum {
-				maxSum = currentSum
-			}
-		}
-	}
-
-	return maxSum
 }
