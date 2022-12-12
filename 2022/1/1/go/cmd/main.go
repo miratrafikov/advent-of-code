@@ -1,7 +1,7 @@
 package main
 
 import (
-	"day-one/internal/algo"
+	"day-one-part-one/internal/algo"
 	"flag"
 	"fmt"
 	"log"
